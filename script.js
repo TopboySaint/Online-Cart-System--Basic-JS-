@@ -1,8 +1,9 @@
 var myItemOncart = [];
 
 if (myItemOncart.length == 0) {
-  showMeMyItems.style.display = "block";
-  showMeMyItems.innerHTML = `
+  showUsOurItems.style.display = "block";
+  // showMeMyItems.style.display = "block";
+  showUsOurItems.innerHTML = `
               <p class="alert alert-danger text-center p-3">No items added yet</p>
           `;
 }
@@ -20,12 +21,29 @@ function addItems() {
 }
 
 function displayItem() {
-  showMeMyItems.innerHTML = "";
+  showUsOurItems.innerHTML = "";
   for (var i = 0; i < myItemOncart.length; i++) {
     // console.log(myItemOncart[i])
-    showMeMyItems.innerHTML += `
+    showUsOurItems.innerHTML += `
                       <small>${i + 1}</small>
                       <p>${myItemOncart[i]}</p>
                   `;
   }
 }
+
+function delTheLastItem(){
+  myItemOncart.pop()
+  displayItem()
+}
+
+function delTheFirstItem(){
+  myItemOncart.shift()
+  displayItem()
+}
+
+function addFirstItem(){
+  myItemOncart.unshift(itemsToAdd.value)
+  displayItem()
+}
+
+

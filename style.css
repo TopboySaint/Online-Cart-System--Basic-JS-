@@ -1,6 +1,7 @@
 .header{
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 800;
+    font-family: cursive;
 }
 .container{
     /* box-shadow: 3px 3px 3px gray; */
@@ -8,6 +9,6 @@
 .buttons{
     margin-left:150px ;
 }
-#alertMe, #showMeMyItems{
+#alertMe, #showUsOurItems{
     display: none;
 }
