@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Carting System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+    <div class="container bg-light p-5 shadow">
+
+        <h1 class="text-center text-primary header">Saints Enterprises</h1>
+
+        <p class="alert alert-primary text-center w-50 mx-auto mt-4" id="alertMe">Space cannot be empty</p>
+
+        <div class="form-outline floatingInput mt-4" data-mdb-input-init>
+            <input type="text" class="form-control w-75 mx-auto" id="itemsToAdd" placeholder="What are you buying from us today?">
+        </div>
+
+        <button class="btn btn-primary w-50 mx-auto d-block mt-5" onclick="addItems()">Submit your items</button>
+    </div>
+
+    <div class="container bg-light p-5 mt-4 shadow">
+
+        <div id="showMeMyItems"></div>
+
+        <div class="buttons ">
+            <button class="btn btn-success col-3 ms-2 mt-3">Delete last</button>
+            <button class="btn btn-primary col-3 ms-2 mt-3">Add first</button>
+            <button class="btn btn-danger col-3 ms-2 mt-3">Delete first</button>
+            <button class="btn btn-secondary col-3 ms-2 mt-3">Edit any</button>
+            <button class="btn btn-info col-3 ms-2 mt-3">Delete any</button>
+            <button class="btn btn-primary col-3 ms-2 mt-3">Delete all</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

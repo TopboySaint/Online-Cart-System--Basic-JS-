@@ -1,0 +1,13 @@
+.header{
+    font-size: 30px;
+    font-weight: 700;
+}
+.container{
+    /* box-shadow: 3px 3px 3px gray; */
+}
+.buttons{
+    margin-left:150px ;
+}
+#alertMe, #showMeMyItems{
+    display: none;
+}
