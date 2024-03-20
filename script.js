@@ -46,4 +46,26 @@ function addFirstItem(){
   displayItem()
 }
 
+function editAny(){
+  var editNumber = Number(prompt("Item number what are you deleting?"))
+  var toWhat = prompt("Enter your new item")
+  // console.log(editNumber);
+  myItemOncart.splice(editNumber-1, 1, toWhat)
+  displayItem()
+}
 
+function deleteAny(){
+  var toDelete = Number(prompt('Delete item number what?'))
+  // console.log(toDelete);
+  myItemOncart.splice(toDelete-1,1)
+  displayItem()
+}
+
+function deleteAllItems(){
+    var askFor = confirm("Are you sure?")
+
+    if (askFor == true){
+      myItemOncart.splice(0,myItemOncart.length)
+      displayItem()
+    }
+}
