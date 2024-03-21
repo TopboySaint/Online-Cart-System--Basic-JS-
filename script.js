@@ -20,52 +20,75 @@ function addItems() {
   }
 }
 
-function displayItem() {
-  showUsOurItems.innerHTML = "";
-  for (var i = 0; i < myItemOncart.length; i++) {
-    // console.log(myItemOncart[i])
-    showUsOurItems.innerHTML += `
-                      <small>${i + 1}</small>
-                      <p>${myItemOncart[i]}</p>
-                  `;
+function delTheLastItem() {
+  myItemOncart.pop();
+  displayItem();
+}
+
+function delTheFirstItem() {
+  myItemOncart.shift();
+  displayItem();
+}
+
+function addFirstItem() {
+  if (itemsToAdd.value == "") {
+    document.getElementById(showUsOurItems).innerHTML == "";
+  }
+  myItemOncart.unshift(itemsToAdd.value);
+  displayItem();
+}
+
+function editAny() {
+  if (itemsToEdit.value == "" && itemsToEdit2.value == "") {
+    alert("Please fill in something");
+    showUsOurItems.style.display = "block";
+    // showMeMyItems.style.display = "block";
+    showUsOurItems.innerHTML = `
+              <p class="alert alert-danger text-center p-3">No items added yet</p>
+          `;
+  } else {
+    if (Number(itemsToEdit.value) > myItemOncart.length) {
+      alert("This exceeds the number of your chosen products");
+    }
+  }
+  var editNumber = Number(document.getElementById("itemsToEdit").value);
+  var toWhat = document.getElementById("itemsToEdit2").value;
+  console.log(editNumber);
+  myItemOncart.splice(editNumber - 1, 1, toWhat);
+  displayItem();
+}
+
+function deleteAny() {
+  var toDelete = Number(prompt("Delete item number what?"));
+  // console.log(toDelete);
+  myItemOncart.splice(toDelete - 1, 1);
+  displayItem();
+}
+
+function deleteAllItems() {
+  var askFor = confirm("Are you sure?");
+
+  if (askFor == true) {
+    myItemOncart.splice(0, myItemOncart.length);
+    displayItem();
   }
 }
 
-function delTheLastItem(){
-  myItemOncart.pop()
-  displayItem()
-}
-
-function delTheFirstItem(){
-  myItemOncart.shift()
-  displayItem()
-}
-
-function addFirstItem(){
-  myItemOncart.unshift(itemsToAdd.value)
-  displayItem()
-}
-
-function editAny(){
-  var editNumber = Number(prompt("Item number what are you deleting?"))
-  var toWhat = prompt("Enter your new item")
-  // console.log(editNumber);
-  myItemOncart.splice(editNumber-1, 1, toWhat)
-  displayItem()
-}
-
-function deleteAny(){
-  var toDelete = Number(prompt('Delete item number what?'))
-  // console.log(toDelete);
-  myItemOncart.splice(toDelete-1,1)
-  displayItem()
-}
-
-function deleteAllItems(){
-    var askFor = confirm("Are you sure?")
-
-    if (askFor == true){
-      myItemOncart.splice(0,myItemOncart.length)
-      displayItem()
-    }
+function displayItem() {
+  var myTable = "<table>";
+  myTable += "<tr>";
+  myTable += `<th> Serial Number(s) </th>`;
+  myTable += `<th> Products </th>`;
+  myTable += "</tr>";
+  showUsOurItems.innerHTML = "";
+  for (var i = 0; i < myItemOncart.length; i++) {
+    // console.log(myItemOncart[i])
+    // showUsOurItems.innerHTML += `
+    myTable += "<tr>";
+    myTable += `<td><small>${i + 1}</small></td>`;
+    myTable += `<td><p>${myItemOncart[i]}</p></td>`;
+    myTable += "</tr>";
+  }
+  myTable += "</table>";
+  showUsOurItems.innerHTML = myTable;
 }
