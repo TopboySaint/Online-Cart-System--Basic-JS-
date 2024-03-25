@@ -75,15 +75,13 @@ function deleteAllItems() {
 }
 
 function displayItem() {
-  var myTable = "<table>";
+  var myTable = '<table class="table">';
   myTable += "<tr>";
-  myTable += `<th> Serial Number(s) </th>`;
+  myTable += `<th> Serial No</th>`;
   myTable += `<th> Products </th>`;
   myTable += "</tr>";
   showUsOurItems.innerHTML = "";
   for (var i = 0; i < myItemOncart.length; i++) {
-    // console.log(myItemOncart[i])
-    // showUsOurItems.innerHTML += `
     myTable += "<tr>";
     myTable += `<td><small>${i + 1}</small></td>`;
     myTable += `<td><p>${myItemOncart[i]}</p></td>`;
