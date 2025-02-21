@@ -31,8 +31,8 @@ function delTheFirstItem() {
 function addFirstItem() {
   if (itemsToAdd.value == "") {
     document.getElementById("alertMe").style.display = "block";
-  }else{
-    document.getElementById("alertMe").style.display = "none"
+  } else {
+    document.getElementById("alertMe").style.display = "none";
     myItemOncart.unshift(itemsToAdd.value);
     document.getElementById("itemsToAdd").value = "";
     displayItem();
@@ -40,36 +40,35 @@ function addFirstItem() {
 }
 
 function editAny() {
-  if (itemsToEdit.value == "" || itemsToEdit2.value == "") {
-    document.getElementById('alertMe2').style.display = 'block';
-    showUsOurItems.style.display = "block";
-    // showMeMyItems.style.display = "block";
-    showUsOurItems.innerHTML = `
-              <p class="alert alert-danger text-center p-3">No items added yet</p>
-          `;
+  let editNumber = Number(document.getElementById("itemsToEdit").value);
+  let toWhat = document.getElementById("itemsToEdit2").value;
+
+  if (editNumber == "" || toWhat == "") {
+    document.getElementById("alertMe2").style.display = "block";
   } else {
-    if (Number(itemsToEdit.value) > myItemOncart.length) {
+    if (Number(editNumber) > myItemOncart.length) {
       alert("This exceeds the number of your chosen products");
+    } else {
+
+      document.getElementById("alertMe2").style.display = "none";
+      myItemOncart.splice(editNumber - 1, 1, toWhat);
+      itemsToEdit.value = "";
+      itemsToEdit2.value = "";
+      displayItem();
     }
   }
-  var editNumber = Number(document.getElementById("itemsToEdit").value);
-  var toWhat = document.getElementById("itemsToEdit2").value;
-  console.log(editNumber);
-  myItemOncart.splice(editNumber - 1, 1, toWhat);
-  displayItem();
 }
 
 function deleteAny() {
-  var toDelete = Number(prompt("Delete item number what?"));
-  // console.log(toDelete);
+  let toDelete = Number(prompt("Delete item number what?"));
   myItemOncart.splice(toDelete - 1, 1);
   displayItem();
 }
 
 function deleteAllItems() {
-  var askFor = confirm("Are you sure?");
+  let askFor = confirm("Are you sure?");
 
-  if (askFor == true) {
+  if (askFor === true) {
     myItemOncart.splice(0, myItemOncart.length);
     displayItem();
   }
