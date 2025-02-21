@@ -9,37 +9,35 @@
   <link rel="stylesheet" href="bootstrap.css">
 </head>
 
-<body>
-  <div class="container bg-light p-5 shadow">
+<body style="background-color: whitesmoke;">
+  <div class="container bg-light p-5 col-12 col-lg-8 col-md-10 mx-auto">
 
     <h1 class="text-center text-primary header">Saints Enterprises Online Cart System</h1>
 
-    <p class="alert alert-primary text-center w-50 mx-auto mt-4" id="alertMe">Space cannot be empty</p>
+    <p class="alert alert-danger text-center p-1 mt-4" id="alertMe">Space cannot be empty</p>
 
     <div class="form-outline floatingInput mt-4" data-mdb-input-init>
-      <input type="text" class="form-control w-75 mx-auto" id="itemsToAdd"
-        placeholder="What are you buying from us today?">
+      <input type="text" class="form-control mx-auto" id="itemsToAdd" placeholder="What are you buying from us today?">
     </div>
 
     <button class="btn btn-primary w-50 mx-auto d-block mt-5" onclick="addItems()">Submit your items</button>
-  </div>
-
-  <div class="container bg-light p-5 mt-4 shadow" id="showUsOurItems">
 
 
-  </div>
-  <div id="showMeMyItems" class="container bg-light p-5 mt-4 shadow">
-    <div class="buttons">
-      <button class="btn btn-success col-3 ms-2 mt-3" onclick="delTheLastItem()">Delete last</button>
-      <button class="btn btn-primary col-3 ms-2 mt-3" onclick="addFirstItem()">Add first</button>
+    <div class="container bg-light p-5 mt-4 shadow" id="showUsOurItems"></div>
 
-      <button class="btn btn-danger col-3 ms-2 mt-3" onclick="delTheFirstItem()">Delete first</button>
+    <div id="showMeMyItems" class="container bg-light p-5 mt-4">
+      <div class="buttons d-flex gap-3 mx-auto flex-wrap">
+        <button class="btn btn-success form-control" onclick="delTheLastItem()">Delete last</button>
+        <button class="btn btn-primary  form-control" onclick="addFirstItem()">Add first</button>
 
-      <button class="btn btn-secondary col-3 ms-2 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit
-        any</button>
+        <button class="btn btn-danger  form-control" onclick="delTheFirstItem()">Delete first</button>
 
-      <button class="btn btn-info col-3 ms-2 mt-3" onclick="deleteAny()">Delete any</button>
-      <button class="btn btn-primary col-3 ms-2 mt-3" onclick="deleteAllItems()">Delete all</button>
+        <button class="btn btn-secondary  form-control" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit
+          any</button>
+
+        <button class="btn btn-info  form-control" onclick="deleteAny()">Delete any</button>
+        <button class="btn btn-primary  form-control" onclick="deleteAllItems()">Delete all</button>
+      </div>
     </div>
   </div>
 

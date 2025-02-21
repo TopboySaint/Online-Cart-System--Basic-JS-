@@ -2,7 +2,6 @@ var myItemOncart = [];
 
 if (myItemOncart.length == 0) {
   showUsOurItems.style.display = "block";
-  // showMeMyItems.style.display = "block";
   showUsOurItems.innerHTML = `
               <p class="alert alert-danger text-center p-3">No items added yet</p>
           `;
