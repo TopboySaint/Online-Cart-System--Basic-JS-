@@ -10,7 +10,7 @@
 </head>
 
 <body style="background-color: whitesmoke;">
-  <div class="container bg-light p-5 col-12 col-lg-8 col-md-10 mx-auto">
+  <div class="container bg-light p-4 col-12 col-lg-8 col-md-10 mx-auto mt-5">
 
     <h1 class="text-center text-primary header">Saints Enterprises Online Cart System</h1>
 
@@ -23,7 +23,7 @@
     <button class="btn btn-primary w-50 mx-auto d-block mt-5" onclick="addItems()">Submit your items</button>
 
 
-    <div class="container bg-light p-5 mt-4 shadow" id="showUsOurItems"></div>
+    <div class="container bg-light p-5 mt-4" id="showUsOurItems"></div>
 
     <div id="showMeMyItems" class="container bg-light p-5 mt-4">
       <div class="buttons d-flex gap-3 mx-auto flex-wrap">
@@ -55,6 +55,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+          <p class="alert alert-danger text-center p-1 mt-4" id="alertMe">Space cannot be empty</p>
           <div class="form-outline floatingInput mt-4" data-mdb-input-init>
             <input type="number" class="form-control w-75 mx-auto" id="itemsToEdit"
               placeholder="What item number are you editing?">

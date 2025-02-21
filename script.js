@@ -14,7 +14,6 @@ function addItems() {
     document.getElementById("alertMe").style.display = "none";
     myItemOncart.push(itemsToAdd.value);
     document.getElementById("itemsToAdd").value = "";
-    // showMeMyItems.innerHTML += myItemOncart
     displayItem();
   }
 }
@@ -31,15 +30,18 @@ function delTheFirstItem() {
 
 function addFirstItem() {
   if (itemsToAdd.value == "") {
-    document.getElementById(showUsOurItems).innerHTML == "";
+    document.getElementById("alertMe").style.display = "block";
+  }else{
+    document.getElementById("alertMe").style.display = "none"
+    myItemOncart.unshift(itemsToAdd.value);
+    document.getElementById("itemsToAdd").value = "";
+    displayItem();
   }
-  myItemOncart.unshift(itemsToAdd.value);
-  displayItem();
 }
 
 function editAny() {
-  if (itemsToEdit.value == "" && itemsToEdit2.value == "") {
-    alert("Please fill in something");
+  if (itemsToEdit.value == "" || itemsToEdit2.value == "") {
+    document.getElementById('alertMe2').style.display = 'block';
     showUsOurItems.style.display = "block";
     // showMeMyItems.style.display = "block";
     showUsOurItems.innerHTML = `
